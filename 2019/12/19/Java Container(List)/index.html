@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Java Container(List) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="why we use containerSometimes, we only know exactly number and type of the objects when we run the code. So we need container to allow us to create any number of objects at any time. ListList contains">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Container(List)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;Java%20Container(List)&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="why we use containerSometimes, we only know exactly number and type of the objects when we run the code. So we need container to allow us to create any number of objects at any time. ListList contains">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-19T09:50:38.738Z">
+<meta property="article:modified_time" content="2019-12-19T09:52:06.603Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Java Container(List)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/19/Java%20Container(List)/" class="article-date">
+  <time datetime="2019-12-19T09:50:38.738Z" itemprop="datePublished">2019-12-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java Container(List)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="why-we-use-container"><a href="#why-we-use-container" class="headerlink" title="why we use container"></a>why we use container</h3><p>Sometimes, we only know exactly number and type of the objects when we run the code. So we need container to allow us to create any number of objects at any time.</p>
+<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>List contains ArrayList and LinkedList</p>
+<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>ArrrayList base on dynamic array, arrays are stored sequentially when storing data, and memory for storing data is also contiguous. When we read a item, we just need tell where it is (the index) and we will get it (it will cost constant time). And if we want insert or delete will cost a lot of time.</p>
+<p>For insert, if we want to insert a item into the array. We need change all the index after the index that we insert(index adds 1). </p>
+<p>For delete, we can find the item we want to delete very quickly, but when we delete it, we need to change all the index after this index(index minus 1)</p>
+<p>But if we just add or delete an item at the end of the array, it only takes a constant time, since it doesn’t need change any index.</p>
+<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>LinkedList is a two-way list, that means any item in the list we record two address, one store the address of the previous item, the other one store the address of the next item. With this method, we add item into the array will cost constant time, for we only need to change two items’ address. </p>
+<p>But for searching, if we want to get a item, we need to search the all list for the random access. For every find, we need start with the first item and according the address, we can find the next one and the next one….. it will cost O(n) time.</p>
+<h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><h5 id="contains"><a href="#contains" class="headerlink" title="contains()"></a>contains()</h5><p>we can use this function to determine if an object is in the list.</p>
+<h5 id="remove"><a href="#remove" class="headerlink" title="remove()"></a>remove()</h5><p>If we want to delete an object, we can give the object reference to this method. Or give it the object index will server same function.</p>
+<h5 id="IndexOf"><a href="#IndexOf" class="headerlink" title="IndexOf()"></a>IndexOf()</h5><p>We can use it to get an object index.</p>
+<h5 id="subList-index1-index2"><a href="#subList-index1-index2" class="headerlink" title="subList(index1,index2)"></a>subList(index1,index2)</h5><p>It allows us to create a fragment of our list, from index1 to index2. </p>
+<p>And be careful, subList returns only a view, and any changes to the returned list are reflected in the original list, and vice versa.</p>
+<h5 id="containsAll"><a href="#containsAll" class="headerlink" title="containsAll()"></a>containsAll()</h5><p>Give a list to this function, and as long as you have an object is not in the original list, return false.</p>
+<h5 id="removeAll"><a href="#removeAll" class="headerlink" title="removeAll()"></a>removeAll()</h5><p>Give a list, and remove all object in this list in the original list. </p>
+<h5 id="set-index-object"><a href="#set-index-object" class="headerlink" title="set(index,object)"></a>set(index,object)</h5><p>Replaces the object with the given object at the specified index.</p>
+<h5 id="isEmpty"><a href="#isEmpty" class="headerlink" title="isEmpty()"></a>isEmpty()</h5><p>Return true if the list is empty.</p>
+<h5 id="clear"><a href="#clear" class="headerlink" title="clear()"></a>clear()</h5><p>Clear the whole list.</p>
+<h5 id="toArrary"><a href="#toArrary" class="headerlink" title="toArrary()"></a>toArrary()</h5><p>return a array that contains all the object in the list.</p>
+<p>Like Object [] o = list.toArray()</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/19/Java%20Container(List)/" data-id="ck4cjo7470001csv76yyt6yzk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/19/my-first-blog-test/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">my first blog(test)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/19/Java%20Container(List)/">Java Container(List)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/19/my-first-blog-test/">my first blog(test)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/19/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
