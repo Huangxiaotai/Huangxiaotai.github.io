@@ -5,15 +5,22 @@
   
 
   
-  <title>Yi&#39;s blog</title>
+  <title>Java Container HashMap(use and basic theory) | Yi&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yi&#39;s blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="The use of the HashMap1234567public static void main(String[] args)&amp;#123;    HashMap&lt;String,String&gt; hashMap&#x3D; new HashMap&lt;&gt;();    hashMap.put(&quot;1&quot;,&quot;2&quot;);    String oldValue &#x3D; hashMap.put(&quot;1&quot;,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Container HashMap(use and basic theory)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;Java-Container-HashMap-use-and-basic-theory&#x2F;index.html">
 <meta property="og:site_name" content="Yi&#39;s blog">
+<meta property="og:description" content="The use of the HashMap1234567public static void main(String[] args)&amp;#123;    HashMap&lt;String,String&gt; hashMap&#x3D; new HashMap&lt;&gt;();    hashMap.put(&quot;1&quot;,&quot;2&quot;);    String oldValue &#x3D; hashMap.put(&quot;1&quot;,">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;pic1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;pic2.png">
+<meta property="article:published_time" content="2019-12-19T23:29:03.000Z">
+<meta property="article:modified_time" content="2019-12-19T23:34:05.994Z">
 <meta property="article:author" content="Yi Huang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;pic1.png">
   
     <link rel="alternate" href="/atom.xml" title="Yi&#39;s blog" type="application/atom+xml">
   
@@ -62,9 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Java-Container-HashMap-use-and-basic-theory" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Java-Container-HashMap-use-and-basic-theory" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/19/Java-Container-HashMap-use-and-basic-theory/" class="article-date">
   <time datetime="2019-12-19T23:29:03.000Z" itemprop="datePublished">2019-12-19</time>
@@ -77,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/19/Java-Container-HashMap-use-and-basic-theory/">Java Container HashMap(use and basic theory)</a>
+    <h1 class="article-title" itemprop="name">
+      Java Container HashMap(use and basic theory)
     </h1>
   
 
@@ -122,116 +127,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Java-Container-List" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/19/Java-Container-List/" class="article-date">
-  <time datetime="2019-12-19T10:52:51.000Z" itemprop="datePublished">2019-12-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/19/Java-Container-List/">Java Container(List)</a>
-    </h1>
+    <a href="/2019/12/19/Java-Container-List/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java Container(List)</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="why-we-use-container"><a href="#why-we-use-container" class="headerlink" title="why we use container"></a>why we use container</h3><p>Sometimes, we only know exactly number and type of the objects when we run the code. So we need container to allow us to create any number of objects at any time.</p>
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>List contains ArrayList and LinkedList</p>
-<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>ArrrayList base on dynamic array, arrays are stored sequentially when storing data, and memory for storing data is also contiguous. When we read a item, we just need tell where it is (the index) and we will get it (it will cost constant time). And if we want insert or delete will cost a lot of time.</p>
-<p>For insert, if we want to insert a item into the array. We need change all the index after the index that we insert(index adds 1). </p>
-<p>For delete, we can find the item we want to delete very quickly, but when we delete it, we need to change all the index after this index(index minus 1)</p>
-<p>But if we just add or delete an item at the end of the array, it only takes a constant time, since it doesn’t need change any index.</p>
-<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>LinkedList is a two-way list, that means any item in the list we record two address, one store the address of the previous item, the other one store the address of the next item. With this method, we add item into the array will cost constant time, for we only need to change two items’ address. </p>
-<p>But for searching, if we want to get a item, we need to search the all list for the random access. For every find, we need start with the first item and according the address, we can find the next one and the next one….. it will cost O(n) time.</p>
-<h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><h5 id="contains"><a href="#contains" class="headerlink" title="contains()"></a>contains()</h5><p>we can use this function to determine if an object is in the list.</p>
-<h5 id="remove"><a href="#remove" class="headerlink" title="remove()"></a>remove()</h5><p>If we want to delete an object, we can give the object reference to this method. Or give it the object index will server same function.</p>
-<h5 id="IndexOf"><a href="#IndexOf" class="headerlink" title="IndexOf()"></a>IndexOf()</h5><p>We can use it to get an object index.</p>
-<h5 id="subList-index1-index2"><a href="#subList-index1-index2" class="headerlink" title="subList(index1,index2)"></a>subList(index1,index2)</h5><p>It allows us to create a fragment of our list, from index1 to index2. </p>
-<p>And be careful, subList returns only a view, and any changes to the returned list are reflected in the original list, and vice versa.</p>
-<h5 id="containsAll"><a href="#containsAll" class="headerlink" title="containsAll()"></a>containsAll()</h5><p>Give a list to this function, and as long as you have an object is not in the original list, return false.</p>
-<h5 id="removeAll"><a href="#removeAll" class="headerlink" title="removeAll()"></a>removeAll()</h5><p>Give a list, and remove all object in this list in the original list. </p>
-<h5 id="set-index-object"><a href="#set-index-object" class="headerlink" title="set(index,object)"></a>set(index,object)</h5><p>Replaces the object with the given object at the specified index.</p>
-<h5 id="isEmpty"><a href="#isEmpty" class="headerlink" title="isEmpty()"></a>isEmpty()</h5><p>Return true if the list is empty.</p>
-<h5 id="clear"><a href="#clear" class="headerlink" title="clear()"></a>clear()</h5><p>Clear the whole list.</p>
-<h5 id="toArrary"><a href="#toArrary" class="headerlink" title="toArrary()"></a>toArrary()</h5><p>return a array that contains all the object in the list.</p>
-<p>Like Object [] o = list.toArray()</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/19/Java-Container-List/" data-id="ck4dfd8oc0000lcv72fzd25bx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/19/hello-world/" class="article-date">
-  <time datetime="2019-12-19T09:45:15.671Z" itemprop="datePublished">2019-12-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/19/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/19/hello-world/" data-id="ck4dfd8ol0002lcv7bf3m20w8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
