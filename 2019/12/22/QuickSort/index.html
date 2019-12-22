@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java Container(List) | Yi&#39;s blog</title>
+  <title>QuickSort | Yi&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="why we use containerSometimes, we only know exactly number and type of the objects when we run the code. So we need container to allow us to create any number of objects at any time. ListList contains">
+  <meta name="description" content="code:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java Container(List)">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;Java-Container-List&#x2F;index.html">
+<meta property="og:title" content="QuickSort">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;22&#x2F;QuickSort&#x2F;index.html">
 <meta property="og:site_name" content="Yi&#39;s blog">
-<meta property="og:description" content="why we use containerSometimes, we only know exactly number and type of the objects when we run the code. So we need container to allow us to create any number of objects at any time. ListList contains">
+<meta property="og:description" content="code:">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-19T10:52:51.000Z">
-<meta property="article:modified_time" content="2019-12-22T13:24:16.000Z">
+<meta property="article:published_time" content="2019-12-22T12:30:00.000Z">
+<meta property="article:modified_time" content="2019-12-22T13:27:04.835Z">
 <meta property="article:author" content="Yi Huang">
 <meta name="twitter:card" content="summary">
   
@@ -146,47 +146,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java-Container-List" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-QuickSort" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java Container(List)
+      QuickSort
     </h1>
   
 
         
-        <a href="/2019/12/19/Java-Container-List/" class="archive-article-date">
-  	<time datetime="2019-12-19T10:52:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
+        <a href="/2019/12/22/QuickSort/" class="archive-article-date">
+  	<time datetime="2019-12-22T12:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="why-we-use-container"><a href="#why-we-use-container" class="headerlink" title="why we use container"></a>why we use container</h3><p>Sometimes, we only know exactly number and type of the objects when we run the code. So we need container to allow us to create any number of objects at any time.</p>
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>List contains ArrayList and LinkedList</p>
+        <p>code:</p>
 <a id="more"></a>
-<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>ArrrayList base on dynamic array, arrays are stored sequentially when storing data, and memory for storing data is also contiguous. When we read a item, we just need tell where it is (the index) and we will get it (it will cost constant time). And if we want insert or delete will cost a lot of time.</p>
-<p>For insert, if we want to insert a item into the array. We need change all the index after the index that we insert(index adds 1). </p>
-<p>For delete, we can find the item we want to delete very quickly, but when we delete it, we need to change all the index after this index(index minus 1)</p>
-<p>But if we just add or delete an item at the end of the array, it only takes a constant time, since it doesn’t need change any index.</p>
-<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>LinkedList is a two-way list, that means any item in the list we record two address, one store the address of the previous item, the other one store the address of the next item. With this method, we add item into the array will cost constant time, for we only need to change two items’ address. </p>
-<p>But for searching, if we want to get a item, we need to search the all list for the random access. For every find, we need start with the first item and according the address, we can find the next one and the next one….. it will cost O(n) time.</p>
-<h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><h5 id="contains"><a href="#contains" class="headerlink" title="contains()"></a>contains()</h5><p>we can use this function to determine if an object is in the list.</p>
-<h5 id="remove"><a href="#remove" class="headerlink" title="remove()"></a>remove()</h5><p>If we want to delete an object, we can give the object reference to this method. Or give it the object index will server same function.</p>
-<h5 id="IndexOf"><a href="#IndexOf" class="headerlink" title="IndexOf()"></a>IndexOf()</h5><p>We can use it to get an object index.</p>
-<h5 id="subList-index1-index2"><a href="#subList-index1-index2" class="headerlink" title="subList(index1,index2)"></a>subList(index1,index2)</h5><p>It allows us to create a fragment of our list, from index1 to index2. </p>
-<p>And be careful, subList returns only a view, and any changes to the returned list are reflected in the original list, and vice versa.</p>
-<h5 id="containsAll"><a href="#containsAll" class="headerlink" title="containsAll()"></a>containsAll()</h5><p>Give a list to this function, and as long as you have an object is not in the original list, return false.</p>
-<h5 id="removeAll"><a href="#removeAll" class="headerlink" title="removeAll()"></a>removeAll()</h5><p>Give a list, and remove all object in this list in the original list. </p>
-<h5 id="set-index-object"><a href="#set-index-object" class="headerlink" title="set(index,object)"></a>set(index,object)</h5><p>Replaces the object with the given object at the specified index.</p>
-<h5 id="isEmpty"><a href="#isEmpty" class="headerlink" title="isEmpty()"></a>isEmpty()</h5><p>Return true if the list is empty.</p>
-<h5 id="clear"><a href="#clear" class="headerlink" title="clear()"></a>clear()</h5><p>Clear the whole list.</p>
-<h5 id="toArrary"><a href="#toArrary" class="headerlink" title="toArrary()"></a>toArrary()</h5><p>return a array that contains all the object in the list.</p>
-<p>Like Object [] o = list.toArray()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span> <span class="params">(<span class="keyword">int</span> []arr)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr== <span class="keyword">null</span> || arr.length-<span class="number">1</span>&lt;<span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        quickSort(arr,<span class="number">0</span>,arr.length-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span> <span class="params">(<span class="keyword">int</span> []arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(L&lt;R)</span><br><span class="line">        &#123;</span><br><span class="line">            swap(arr,L+(<span class="keyword">int</span>)(Math.random()*(R-L+<span class="number">1</span>)),R);</span><br><span class="line">            <span class="keyword">int</span> [] p = partition (arr,L,R);</span><br><span class="line"></span><br><span class="line">            quickSort(arr,L,p[<span class="number">0</span>]-<span class="number">1</span>) ;</span><br><span class="line">            quickSort(arr,p[<span class="number">1</span>]+<span class="number">1</span>,R);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] partition (<span class="keyword">int</span> []arr,<span class="keyword">int</span> L,<span class="keyword">int</span> R)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> less = L-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> more = R;</span><br><span class="line">        <span class="keyword">while</span> (L&lt;more)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[L]&lt;arr[R])</span><br><span class="line">            &#123;</span><br><span class="line">                swap(arr,++less,L++);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (arr[L] &gt;arr[R])</span><br><span class="line">            &#123;</span><br><span class="line">                swap(arr,--more,L);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                L++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr,more,R);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;less+<span class="number">1</span>, more&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span> <span class="params">(<span class="keyword">int</span> []arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp =arr[L];</span><br><span class="line">        arr[L]= arr[R];</span><br><span class="line">        arr[R]=temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> [] a = &#123;<span class="number">12</span>,<span class="number">45</span>,<span class="number">67</span>,<span class="number">12</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">91</span>,<span class="number">34</span>,<span class="number">71</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        quickSort(a);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i:</span><br><span class="line">             a) &#123;</span><br><span class="line">            System.out.println(i+<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -266,7 +249,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/19/Java-Container-List/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/22/QuickSort/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,15 +263,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/19/Java-Container-HashMap-use-and-basic-theory/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/12/22/HeapSort/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java Container HashMap(use and basic theory)
+          HeapSort
         
       </div>
     </a>
   
+  
+    <a href="/2019/12/22/SelectionSort/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SelectionSort</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

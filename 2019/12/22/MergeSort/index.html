@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java Container(List) | Yi&#39;s blog</title>
+  <title>MergeSort | Yi&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="why we use containerSometimes, we only know exactly number and type of the objects when we run the code. So we need container to allow us to create any number of objects at any time. ListList contains">
+  <meta name="description" content="code:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java Container(List)">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;Java-Container-List&#x2F;index.html">
+<meta property="og:title" content="MergeSort">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;22&#x2F;MergeSort&#x2F;index.html">
 <meta property="og:site_name" content="Yi&#39;s blog">
-<meta property="og:description" content="why we use containerSometimes, we only know exactly number and type of the objects when we run the code. So we need container to allow us to create any number of objects at any time. ListList contains">
+<meta property="og:description" content="code:">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-19T10:52:51.000Z">
-<meta property="article:modified_time" content="2019-12-22T13:24:16.000Z">
+<meta property="article:published_time" content="2019-12-22T12:24:16.000Z">
+<meta property="article:modified_time" content="2019-12-22T13:26:59.311Z">
 <meta property="article:author" content="Yi Huang">
 <meta name="twitter:card" content="summary">
   
@@ -146,47 +146,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java-Container-List" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MergeSort" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java Container(List)
+      MergeSort
     </h1>
   
 
         
-        <a href="/2019/12/19/Java-Container-List/" class="archive-article-date">
-  	<time datetime="2019-12-19T10:52:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
+        <a href="/2019/12/22/MergeSort/" class="archive-article-date">
+  	<time datetime="2019-12-22T12:24:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="why-we-use-container"><a href="#why-we-use-container" class="headerlink" title="why we use container"></a>why we use container</h3><p>Sometimes, we only know exactly number and type of the objects when we run the code. So we need container to allow us to create any number of objects at any time.</p>
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>List contains ArrayList and LinkedList</p>
+        <p>code:</p>
 <a id="more"></a>
-<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>ArrrayList base on dynamic array, arrays are stored sequentially when storing data, and memory for storing data is also contiguous. When we read a item, we just need tell where it is (the index) and we will get it (it will cost constant time). And if we want insert or delete will cost a lot of time.</p>
-<p>For insert, if we want to insert a item into the array. We need change all the index after the index that we insert(index adds 1). </p>
-<p>For delete, we can find the item we want to delete very quickly, but when we delete it, we need to change all the index after this index(index minus 1)</p>
-<p>But if we just add or delete an item at the end of the array, it only takes a constant time, since it doesn’t need change any index.</p>
-<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>LinkedList is a two-way list, that means any item in the list we record two address, one store the address of the previous item, the other one store the address of the next item. With this method, we add item into the array will cost constant time, for we only need to change two items’ address. </p>
-<p>But for searching, if we want to get a item, we need to search the all list for the random access. For every find, we need start with the first item and according the address, we can find the next one and the next one….. it will cost O(n) time.</p>
-<h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><h5 id="contains"><a href="#contains" class="headerlink" title="contains()"></a>contains()</h5><p>we can use this function to determine if an object is in the list.</p>
-<h5 id="remove"><a href="#remove" class="headerlink" title="remove()"></a>remove()</h5><p>If we want to delete an object, we can give the object reference to this method. Or give it the object index will server same function.</p>
-<h5 id="IndexOf"><a href="#IndexOf" class="headerlink" title="IndexOf()"></a>IndexOf()</h5><p>We can use it to get an object index.</p>
-<h5 id="subList-index1-index2"><a href="#subList-index1-index2" class="headerlink" title="subList(index1,index2)"></a>subList(index1,index2)</h5><p>It allows us to create a fragment of our list, from index1 to index2. </p>
-<p>And be careful, subList returns only a view, and any changes to the returned list are reflected in the original list, and vice versa.</p>
-<h5 id="containsAll"><a href="#containsAll" class="headerlink" title="containsAll()"></a>containsAll()</h5><p>Give a list to this function, and as long as you have an object is not in the original list, return false.</p>
-<h5 id="removeAll"><a href="#removeAll" class="headerlink" title="removeAll()"></a>removeAll()</h5><p>Give a list, and remove all object in this list in the original list. </p>
-<h5 id="set-index-object"><a href="#set-index-object" class="headerlink" title="set(index,object)"></a>set(index,object)</h5><p>Replaces the object with the given object at the specified index.</p>
-<h5 id="isEmpty"><a href="#isEmpty" class="headerlink" title="isEmpty()"></a>isEmpty()</h5><p>Return true if the list is empty.</p>
-<h5 id="clear"><a href="#clear" class="headerlink" title="clear()"></a>clear()</h5><p>Clear the whole list.</p>
-<h5 id="toArrary"><a href="#toArrary" class="headerlink" title="toArrary()"></a>toArrary()</h5><p>return a array that contains all the object in the list.</p>
-<p>Like Object [] o = list.toArray()</p>
+
+<p>``` java<br>public class MergeSort {<br>    public static void mergeSort(int []arr)<br>    {<br>      if(arr ==null || arr.length&lt;2)<br>          return ;<br>      else<br>      {<br>          sortProcess(arr,0,arr.length-1);<br>      }<br>    }<br>    public static void sortProcess(int []arr, int L,int R)<br>    {<br>        if(L==R)<br>            return ;<br>        else<br>        {<br>            int mid = L+((R-L)&gt;&gt;1);<br>            sortProcess(arr,L,mid);<br>            sortProcess(arr,mid+1,R);<br>            merge(arr,L,mid,R);<br>        }<br>    }<br>    public static void merge(int []arr, int L, int mid,int R)<br>    {<br>        int [] help = new int [R-L+1];<br>        int i=0;<br>        int p1=L;<br>        int p2=mid+1;<br>        while (p1&lt;=mid &amp;&amp;p2&lt;=R)<br>        {<br>            help[i++]=arr[p1]&lt;arr[p2] ?arr[p1++] :arr[p2++];<br>        }<br>        while (p1 &lt;=mid)<br>        {<br>            help[i++] =arr[p1++];<br>        }<br>        while (p2&lt;=R)<br>        {<br>            help[i++] =arr[p2++];<br>        }<br>        for(i=0;i&lt;help.length;i++)<br>        {<br>            arr[L+i]= help[i];<br>        }<br>    }<br>    public static void main(String args[])<br>    {<br>        int [] arr={1,3,57,1233,71,3,768,213,723,41};<br>        mergeSort(arr);<br>        for (int i:<br>                arr) {<br>            System.out.print(i+” “);<br>        }<br>    }</p>
+<p>}</p>
 
       
 
@@ -266,7 +250,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/19/Java-Container-List/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/22/MergeSort/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,15 +264,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/19/Java-Container-HashMap-use-and-basic-theory/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/12/22/SelectionSort/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java Container HashMap(use and basic theory)
+          SelectionSort
         
       </div>
     </a>
   
+  
+    <a href="/2019/12/22/BubbleSort/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BubbleSort</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
