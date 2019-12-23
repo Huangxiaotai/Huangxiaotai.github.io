@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>BubbleSort | Yi&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="code:">
+  <meta name="description" content="The BublleSort is a very simple algorithm to sort an array. The basic idea is to sink one maximum or minimum number at a time to the end of the array.  Time complexity is : $O(N^2)$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BubbleSort">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;22&#x2F;BubbleSort&#x2F;index.html">
 <meta property="og:site_name" content="Yi&#39;s blog">
-<meta property="og:description" content="code:">
+<meta property="og:description" content="The BublleSort is a very simple algorithm to sort an array. The basic idea is to sink one maximum or minimum number at a time to the end of the array.  Time complexity is : $O(N^2)$">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-12-22T12:23:22.000Z">
-<meta property="article:modified_time" content="2019-12-22T13:26:49.195Z">
+<meta property="article:modified_time" content="2019-12-23T03:24:42.655Z">
 <meta property="article:author" content="Yi Huang">
 <meta name="twitter:card" content="summary">
   
@@ -166,12 +166,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>code:</p>
+        <p>The BublleSort is a very simple algorithm to sort an array.</p>
+<p>The basic idea is to sink one maximum or minimum number at a time to the end of the array. </p>
+<p>Time complexity is : $O(N^2)$</p>
 <a id="more"></a>
 
-
+<p>code:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BubbleSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">static</span>  <span class="keyword">void</span>  <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span> []arr)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr==<span class="keyword">null</span>||arr.length&lt;<span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=arr.length-<span class="number">1</span>;i&gt;<span class="number">0</span>;i--)</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(arr[j]&lt;arr[j+<span class="number">1</span>])</span><br><span class="line">                    &#123;</span><br><span class="line">                        swap(arr,j,j+<span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[ ]arr,<span class="keyword">int</span> i, <span class="keyword">int</span> j )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp=arr[i];</span><br><span class="line">        arr[i]=arr[j];</span><br><span class="line">        arr[j]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String args [])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> []arr =&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">83</span>,<span class="number">4</span>,<span class="number">25</span>,<span class="number">723</span>,<span class="number">7</span>,<span class="number">12</span>,<span class="number">56</span>&#125;;</span><br><span class="line">        bubbleSort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i:</span><br><span class="line">                arr) &#123;</span><br><span class="line">            System.out.print(i+<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
       
 
       
@@ -554,5 +555,20 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
