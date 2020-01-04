@@ -144,6 +144,147 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-BucketSort-and-comparator" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/29/BucketSort-and-comparator/">BucketSort and comparator</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/29/BucketSort-and-comparator/" class="archive-article-date">
+  	<time datetime="2019-12-29T21:09:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><h3 id="Comparator"><a href="#Comparator" class="headerlink" title="Comparator"></a>Comparator</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">IdAscendingComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span> <span class="params">(Student o1,Student o2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> o1.id-o2.id;</span><br><span class="line">        <span class="comment">// return &lt;0, o1 should be the former</span></span><br><span class="line">        <span class="comment">// return &gt;0, o2 should be the former</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>PriorityQueue actually is a heap.</p>
+<p>Using our class that is defined by ourselves, we need put the comparator into the constructor</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PriorityQueue &lt;Student&gt; heap = <span class="keyword">new</span> PriorityQueue&lt;&gt; (<span class="keyword">new</span> IdAscendingComparator)</span><br></pre></td></tr></table></figure>
+<h3 id="Bucket-sort"><a href="#Bucket-sort" class="headerlink" title="Bucket sort"></a>Bucket sort</h3><p>It is non-comparison-based sorting. </p>
+<p>Time complexity is O(N), extra space use O(N).</p>
+<p>stable sorting method</p>
+<p>Q: a given array, after sorting, we should find the max span between two near nums.</p>
+<p>A: If there is N numbers and we assign N+1 buckets. First we traverse the array, find the maximum and minimum. If max and min is equal, then return 0.</p>
+<p>then we separate from min to max to N+1, every number should be sent to the bucket that it is fit to the span.</p>
+<p>Anyway, it must have a empty bucket, cause we have N+1 buckets(purpose: the max will not come from a same bucket.)</p>
+<p>One bucket record two kinds of information: the max value and min value, a boolean indicates whether is empty.</p>
+<p>From the bucket One, if it is empty then visit next one , if it’s not empty, find the max value of left non-empty bucket that is closest to this bucket. Computing the max value and the min value of this bucket, use a global value record.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/29/BucketSort-and-comparator/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-the-sorting-algorithm-strategy-in-the-real-world-project" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/29/the-sorting-algorithm-strategy-in-the-real-world-project/">the sorting algorithm strategy in the real-world project</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/29/the-sorting-algorithm-strategy-in-the-real-world-project/" class="archive-article-date">
+  	<time datetime="2019-12-29T20:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1)if the array is short, we will use insert sort, for it’s low time cost with O(1) operation.</p>
+<p>2)During the merge sort, if the sub-array split by merge sort is less than a specific number (like 60), we will use Insert sort. </p>
+<p>3)If we use basic element like int,double,float…… we just use Quick Sort.</p>
+<p>4)If we use class defined by ourselves, we use merge sort. Cause we need to classify original object types.<br>  Like we don’t want to lose some properties that the array already have, if we sort the array as people’s age, we still want to same age people’s order is same to the original.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/29/the-sorting-algorithm-strategy-in-the-real-world-project/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-InsertSort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -164,7 +305,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>code:<br>
+        <p>we need to deal with 0-i , but 0-(i-1) is ordered. so we need to figure out where the arr[i] need to go.<br>code:<br>
         
           <a class="article-more-a" href="/2019/12/23/InsertSort/#more">more >></a>
         
@@ -359,7 +500,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>QuickSort is output-senstive sorting algorithm.  </p>
+        <p>QuickSort is output-senstive sorting algorithm.<br>QuickSort is not a stable sorting, it will desotry the original order.</p>
         
           <a class="article-more-a" href="/2019/12/22/QuickSort/#more">more >></a>
         
@@ -666,72 +807,10 @@
 
 
   
-    <article id="post-Java-Container-List" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/19/Java-Container-List/">Java Container(List)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/19/Java-Container-List/" class="archive-article-date">
-  	<time datetime="2019-12-19T10:52:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="why-we-use-container"><a href="#why-we-use-container" class="headerlink" title="why we use container"></a>why we use container</h3><p>Sometimes, we only know exactly number and type of the objects when we run the code. So we need container to allow us to create any number of objects at any time.</p>
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>List contains ArrayList and LinkedList</p>
-        
-          <a class="article-more-a" href="/2019/12/19/Java-Container-List/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/19/Java-Container-List/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 

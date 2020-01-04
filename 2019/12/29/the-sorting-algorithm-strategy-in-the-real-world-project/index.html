@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>QuickSort | Yi&#39;s blog</title>
+  <title>the sorting algorithm strategy in the real-world project | Yi&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="QuickSort is output-senstive sorting algorithm.QuickSort is not a stable sorting, it will desotry the original order.">
+  <meta name="description" content="1)if the array is short, we will use insert sort, for it’s low time cost with O(1) operation. 2)During the merge sort, if the sub-array split by merge sort is less than a specific number (like 60), we">
 <meta property="og:type" content="article">
-<meta property="og:title" content="QuickSort">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;22&#x2F;QuickSort&#x2F;index.html">
+<meta property="og:title" content="the sorting algorithm strategy in the real-world project">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;29&#x2F;the-sorting-algorithm-strategy-in-the-real-world-project&#x2F;index.html">
 <meta property="og:site_name" content="Yi&#39;s blog">
-<meta property="og:description" content="QuickSort is output-senstive sorting algorithm.QuickSort is not a stable sorting, it will desotry the original order.">
+<meta property="og:description" content="1)if the array is short, we will use insert sort, for it’s low time cost with O(1) operation. 2)During the merge sort, if the sub-array split by merge sort is less than a specific number (like 60), we">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-22T12:30:00.000Z">
-<meta property="article:modified_time" content="2019-12-29T21:05:18.933Z">
+<meta property="article:published_time" content="2019-12-29T20:37:31.000Z">
+<meta property="article:modified_time" content="2019-12-29T21:06:55.051Z">
 <meta property="article:author" content="Yi Huang">
 <meta name="twitter:card" content="summary">
   
@@ -146,29 +146,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-QuickSort" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-the-sorting-algorithm-strategy-in-the-real-world-project" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      QuickSort
+      the sorting algorithm strategy in the real-world project
     </h1>
   
 
         
-        <a href="/2019/12/22/QuickSort/" class="archive-article-date">
-  	<time datetime="2019-12-22T12:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-22</time>
+        <a href="/2019/12/29/the-sorting-algorithm-strategy-in-the-real-world-project/" class="archive-article-date">
+  	<time datetime="2019-12-29T20:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>QuickSort is output-senstive sorting algorithm.<br>QuickSort is not a stable sorting, it will desotry the original order.</p>
-<a id="more"></a>
-<p>code:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span> <span class="params">(<span class="keyword">int</span> []arr)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr== <span class="keyword">null</span> || arr.length-<span class="number">1</span>&lt;<span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        quickSort(arr,<span class="number">0</span>,arr.length-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span> <span class="params">(<span class="keyword">int</span> []arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(L&lt;R)</span><br><span class="line">        &#123;</span><br><span class="line">            swap(arr,L+(<span class="keyword">int</span>)(Math.random()*(R-L+<span class="number">1</span>)),R); <span class="comment">// random choose a int as the indicator </span></span><br><span class="line">            <span class="keyword">int</span> [] p = partition (arr,L,R);  <span class="comment">// retrun two index, one means less than and one means greater than</span></span><br><span class="line"></span><br><span class="line">            quickSort(arr,L,p[<span class="number">0</span>]-<span class="number">1</span>) ;</span><br><span class="line">            quickSort(arr,p[<span class="number">1</span>]+<span class="number">1</span>,R);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] partition (<span class="keyword">int</span> []arr,<span class="keyword">int</span> L,<span class="keyword">int</span> R)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> less = L-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> more = R;</span><br><span class="line">        <span class="keyword">while</span> (L&lt;more)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[L]&lt;arr[R])  <span class="comment">// less than arr[R] send to the left of array</span></span><br><span class="line">            &#123;</span><br><span class="line">                swap(arr,++less,L++);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (arr[L] &gt;arr[R])  <span class="comment">// grater than arr[R] send to the right of array.</span></span><br><span class="line">            &#123;</span><br><span class="line">                swap(arr,--more,L);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                L++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr,more,R);  <span class="comment">//It's the middle part of the array</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;less+<span class="number">1</span>, more&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span> <span class="params">(<span class="keyword">int</span> []arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp =arr[L];</span><br><span class="line">        arr[L]= arr[R];</span><br><span class="line">        arr[R]=temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> [] a = &#123;<span class="number">12</span>,<span class="number">45</span>,<span class="number">67</span>,<span class="number">12</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">91</span>,<span class="number">34</span>,<span class="number">71</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        quickSort(a);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i:</span><br><span class="line">             a) &#123;</span><br><span class="line">            System.out.println(i+<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>1)if the array is short, we will use insert sort, for it’s low time cost with O(1) operation.</p>
+<p>2)During the merge sort, if the sub-array split by merge sort is less than a specific number (like 60), we will use Insert sort. </p>
+<p>3)If we use basic element like int,double,float…… we just use Quick Sort.</p>
+<p>4)If we use class defined by ourselves, we use merge sort. Cause we need to classify original object types.<br>  Like we don’t want to lose some properties that the array already have, if we sort the array as people’s age, we still want to same age people’s order is same to the original.</p>
 
       
 
@@ -248,7 +249,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/22/QuickSort/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/29/the-sorting-algorithm-strategy-in-the-real-world-project/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -262,18 +263,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/22/HeapSort/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/12/29/BucketSort-and-comparator/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          HeapSort
+          BucketSort and comparator
         
       </div>
     </a>
   
   
-    <a href="/2019/12/22/SelectionSort/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SelectionSort</div>
+    <a href="/2019/12/23/InsertSort/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">InsertSort</div>
       <i class="icon-circle-right"></i>
     </a>
   

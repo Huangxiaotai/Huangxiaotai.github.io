@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>InsertSort | Yi&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="code:">
+  <meta name="description" content="we need to deal with 0-i , but 0-(i-1) is ordered. so we need to figure out where the arr[i] need to go.code:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="InsertSort">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;23&#x2F;InsertSort&#x2F;index.html">
 <meta property="og:site_name" content="Yi&#39;s blog">
-<meta property="og:description" content="code:">
+<meta property="og:description" content="we need to deal with 0-i , but 0-(i-1) is ordered. so we need to figure out where the arr[i] need to go.code:">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-12-23T09:26:19.000Z">
-<meta property="article:modified_time" content="2019-12-23T09:26:34.678Z">
+<meta property="article:modified_time" content="2019-12-23T09:28:35.598Z">
 <meta property="article:author" content="Yi Huang">
 <meta name="twitter:card" content="summary">
   
@@ -166,7 +166,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>code:<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">InsertSort</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span> []arr)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr=<span class="keyword">null</span> || arr.length&lt;<span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;arr.length;i++)</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=i-<span class="number">1</span>;j&gt;=<span class="number">0</span>&amp;&amp;arr[j]&gt;arr[j+<span class="number">1</span>];j--)</span><br><span class="line">                &#123;</span><br><span class="line">                    swap (arr,j,j+<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[]arr,<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        temp = arr[i];</span><br><span class="line">        arr[i]= arr[j];</span><br><span class="line">        arr[j]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>we need to deal with 0-i , but 0-(i-1) is ordered. so we need to figure out where the arr[i] need to go.<br>code:<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">InsertSort</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span> []arr)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr=<span class="keyword">null</span> || arr.length&lt;<span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;arr.length;i++)</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=i-<span class="number">1</span>;j&gt;=<span class="number">0</span>&amp;&amp;arr[j]&gt;arr[j+<span class="number">1</span>];j--)</span><br><span class="line">                &#123;</span><br><span class="line">                    swap (arr,j,j+<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[]arr,<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        temp = arr[i];</span><br><span class="line">        arr[i]= arr[j];</span><br><span class="line">        arr[j]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -259,6 +259,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/12/29/the-sorting-algorithm-strategy-in-the-real-world-project/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          the sorting algorithm strategy in the real-world project
+        
+      </div>
+    </a>
   
   
     <a href="/2019/12/22/small-sum-problem/" id="article-nav-older" class="article-nav-link-wrap">

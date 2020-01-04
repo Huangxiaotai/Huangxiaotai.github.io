@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>QuickSort | Yi&#39;s blog</title>
+  <title>BucketSort and comparator | Yi&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="QuickSort is output-senstive sorting algorithm.QuickSort is not a stable sorting, it will desotry the original order.">
+  <meta name="description" content="Comparator123456789public static class IdAscendingComparator implements Comparator&lt;String&gt; &amp;#123;    @Override     public int compare (Student o1,Student o2)    &amp;#123;        return o1.id-o2.id">
 <meta property="og:type" content="article">
-<meta property="og:title" content="QuickSort">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;22&#x2F;QuickSort&#x2F;index.html">
+<meta property="og:title" content="BucketSort and comparator">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;29&#x2F;BucketSort-and-comparator&#x2F;index.html">
 <meta property="og:site_name" content="Yi&#39;s blog">
-<meta property="og:description" content="QuickSort is output-senstive sorting algorithm.QuickSort is not a stable sorting, it will desotry the original order.">
+<meta property="og:description" content="Comparator123456789public static class IdAscendingComparator implements Comparator&lt;String&gt; &amp;#123;    @Override     public int compare (Student o1,Student o2)    &amp;#123;        return o1.id-o2.id">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-22T12:30:00.000Z">
-<meta property="article:modified_time" content="2019-12-29T21:05:18.933Z">
+<meta property="article:published_time" content="2019-12-29T21:09:08.000Z">
+<meta property="article:modified_time" content="2019-12-29T21:09:30.404Z">
 <meta property="article:author" content="Yi Huang">
 <meta name="twitter:card" content="summary">
   
@@ -146,29 +146,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-QuickSort" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-BucketSort-and-comparator" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      QuickSort
+      BucketSort and comparator
     </h1>
   
 
         
-        <a href="/2019/12/22/QuickSort/" class="archive-article-date">
-  	<time datetime="2019-12-22T12:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-22</time>
+        <a href="/2019/12/29/BucketSort-and-comparator/" class="archive-article-date">
+  	<time datetime="2019-12-29T21:09:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>QuickSort is output-senstive sorting algorithm.<br>QuickSort is not a stable sorting, it will desotry the original order.</p>
-<a id="more"></a>
-<p>code:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span> <span class="params">(<span class="keyword">int</span> []arr)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr== <span class="keyword">null</span> || arr.length-<span class="number">1</span>&lt;<span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        quickSort(arr,<span class="number">0</span>,arr.length-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span> <span class="params">(<span class="keyword">int</span> []arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(L&lt;R)</span><br><span class="line">        &#123;</span><br><span class="line">            swap(arr,L+(<span class="keyword">int</span>)(Math.random()*(R-L+<span class="number">1</span>)),R); <span class="comment">// random choose a int as the indicator </span></span><br><span class="line">            <span class="keyword">int</span> [] p = partition (arr,L,R);  <span class="comment">// retrun two index, one means less than and one means greater than</span></span><br><span class="line"></span><br><span class="line">            quickSort(arr,L,p[<span class="number">0</span>]-<span class="number">1</span>) ;</span><br><span class="line">            quickSort(arr,p[<span class="number">1</span>]+<span class="number">1</span>,R);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] partition (<span class="keyword">int</span> []arr,<span class="keyword">int</span> L,<span class="keyword">int</span> R)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> less = L-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> more = R;</span><br><span class="line">        <span class="keyword">while</span> (L&lt;more)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[L]&lt;arr[R])  <span class="comment">// less than arr[R] send to the left of array</span></span><br><span class="line">            &#123;</span><br><span class="line">                swap(arr,++less,L++);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (arr[L] &gt;arr[R])  <span class="comment">// grater than arr[R] send to the right of array.</span></span><br><span class="line">            &#123;</span><br><span class="line">                swap(arr,--more,L);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                L++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr,more,R);  <span class="comment">//It's the middle part of the array</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;less+<span class="number">1</span>, more&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span> <span class="params">(<span class="keyword">int</span> []arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp =arr[L];</span><br><span class="line">        arr[L]= arr[R];</span><br><span class="line">        arr[R]=temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> [] a = &#123;<span class="number">12</span>,<span class="number">45</span>,<span class="number">67</span>,<span class="number">12</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">91</span>,<span class="number">34</span>,<span class="number">71</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        quickSort(a);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i:</span><br><span class="line">             a) &#123;</span><br><span class="line">            System.out.println(i+<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><h3 id="Comparator"><a href="#Comparator" class="headerlink" title="Comparator"></a>Comparator</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">IdAscendingComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span> <span class="params">(Student o1,Student o2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> o1.id-o2.id;</span><br><span class="line">        <span class="comment">// return &lt;0, o1 should be the former</span></span><br><span class="line">        <span class="comment">// return &gt;0, o2 should be the former</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>PriorityQueue actually is a heap.</p>
+<p>Using our class that is defined by ourselves, we need put the comparator into the constructor</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PriorityQueue &lt;Student&gt; heap = <span class="keyword">new</span> PriorityQueue&lt;&gt; (<span class="keyword">new</span> IdAscendingComparator)</span><br></pre></td></tr></table></figure>
+<h3 id="Bucket-sort"><a href="#Bucket-sort" class="headerlink" title="Bucket sort"></a>Bucket sort</h3><p>It is non-comparison-based sorting. </p>
+<p>Time complexity is O(N), extra space use O(N).</p>
+<p>stable sorting method</p>
+<p>Q: a given array, after sorting, we should find the max span between two near nums.</p>
+<p>A: If there is N numbers and we assign N+1 buckets. First we traverse the array, find the maximum and minimum. If max and min is equal, then return 0.</p>
+<p>then we separate from min to max to N+1, every number should be sent to the bucket that it is fit to the span.</p>
+<p>Anyway, it must have a empty bucket, cause we have N+1 buckets(purpose: the max will not come from a same bucket.)</p>
+<p>One bucket record two kinds of information: the max value and min value, a boolean indicates whether is empty.</p>
+<p>From the bucket One, if it is empty then visit next one , if it’s not empty, find the max value of left non-empty bucket that is closest to this bucket. Computing the max value and the min value of this bucket, use a global value record.</p>
 
       
 
@@ -248,7 +258,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/22/QuickSort/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/29/BucketSort-and-comparator/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -262,18 +272,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/22/HeapSort/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HeapSort
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/22/SelectionSort/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SelectionSort</div>
+    <a href="/2019/12/29/the-sorting-algorithm-strategy-in-the-real-world-project/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">the sorting algorithm strategy in the real-world project</div>
       <i class="icon-circle-right"></i>
     </a>
   
